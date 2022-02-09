@@ -42,6 +42,16 @@ public class Part1 {
         System.out.println("DNA is " + dna);
         result = findSimpleGene(dna);
         System.out.println("Gene is " + result);
+        //test case 3: DNA with no "TAA"
+        dna = "GAGTATGAAAAATGGGGGA";
+        System.out.println("DNA is " + dna);
+        result = findSimpleGene(dna);
+        System.out.println("Gene is " + result);
+        //test case 4: DNA with ATG and TAA, gene not a multiple of 3
+        dna = "GAGTATGAAAATAAGGGA";
+        System.out.println("DNA is " + dna);
+        result = findSimpleGene(dna);
+        System.out.println("Gene is " + result);
     }
 
 }
