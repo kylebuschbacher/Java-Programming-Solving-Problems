@@ -59,7 +59,7 @@ public class Part1 {
 public class Part2 {
     public String findSimpleGene (String dna) {
         //want to find DNA strings regardless of case:
-        dna = dna.toUpperCase() //strings are immutable, so I think this is right
+        dna = dna.toUpperCase(); //strings are immutable, so I think this is right
         //find the index position of the start codon "ATG"
         int startCodon = dna.indexOf("ATG");
         //if no "ATG", return empty string
