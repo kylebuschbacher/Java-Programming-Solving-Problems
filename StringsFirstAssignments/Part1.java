@@ -106,3 +106,14 @@ public class Part2 {
         System.out.println("Gene is " + result);
     }
 }
+
+public class Part3 {
+    public boolean twoOccurrences(stringa, stringb) {
+    //is this the right way to declear a boolean method?
+        //return true if string a appears at least twice in stringb, else return false.
+        //1. find stringa in stringb once
+        //2. find stringa again
+        //2a. if not there, return false.
+        //2b. if there, return true.
+    }
+}
