@@ -1,13 +1,14 @@
-import edu.duke.*;
-import java.io.File;
+
 /**
- * Find a gene using the simplified algorithm
+ * Write a description of Part2 here.
  * 
- * @author (Kyle) 
- * @version (2/6/22)
+ * @author (your name) 
+ * @version (a version number or a date)
  */
-public class Part1 {
+public class Part2 {
     public String findSimpleGene (String dna) {
+        //want to find DNA strings regardless of case:
+        dna = dna.toUpperCase(); //strings are immutable, so I think this is right
         //find the index position of the start codon "ATG"
         int startCodon = dna.indexOf("ATG");
         //if no "ATG", return empty string
@@ -31,9 +32,9 @@ public class Part1 {
     return "";}
     
     public void testSimpleGene() {
-        //test case 1: DNA with ATG, TAA and the substring
+        //test case 1: DNA with ATG, TAA and the substring. also test case
         //between them is a multiple of 3 (a gene)
-        String dna = "AAAAATGGAGTAATTTTTT";
+        String dna = "AAAAatgGAGTAATTTTTT";
         System.out.println("DNA is " + dna);
         String result = findSimpleGene(dna);
         System.out.println("Gene is " + result);
@@ -53,6 +54,7 @@ public class Part1 {
         result = findSimpleGene(dna);
         System.out.println("Gene is " + result);
     }
-
 }
+
+
 
