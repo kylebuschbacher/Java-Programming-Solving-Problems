@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Part4
+comment0.text=\r\n\ Write\ a\ program\ that\ reads\ the\ lines\ from\ the\ file\ at\ this\ URL\ location,\ http\://www.dukelearntoprogram.com/course2/data/manylinks.html,\ \r\n\ and\ prints\ each\ URL\ on\ the\ page\ that\ is\ a\ link\ to\ youtube.com.\r\n\ \r\n\ @author\ Kyle\r\n\ @version\ 2/11/2022\r\n
+comment1.params=
+comment1.target=void\ findYoutube()
+numComments=2
