@@ -36,9 +36,9 @@ public class Part1 {
         num = findStopCodon(testDna, 0, "TAA");
         if (num != 28) System.out.println("error on 28");
         //case 3: look for TGA, but only TAA in dna
-        test Dna = "xxxyyyATGxxxTGAxxxyyy"
+        testDna = "xxxyyyATGxxxTGAxxxyyy"
         num = findStopCodon(testDna, 0, "TAA");
-        if (num != -1) System.out.println("error on -1");
+        if (num != testDna.length() ) System.out.println("error on dnalength");
 
    }
    public String findGene(String dna) {
@@ -51,11 +51,19 @@ public class Part1 {
             return "";
         }
        //Find the index of the first occurrence of the stop codon “TAA” after the first occurrence of “ATG” that is a multiple of three away from the “ATG”. 
-       //Find the index of the first occurrence of the stop codon “TAG” after the first occurrence of “ATG” that is a multiple of three away from the “ATG”. 
+       int stopTAA = findStopCodon(dna, startCodon, "TAA");
+       //Find the index of the first occurrence of the stop codon “TAG” after the first occurrence of “ATG” that is a multiple of three away from the “ATG”.
+       int stopTAG = findStopCodon(dna, startCodon, "TAG");
        //Find the index of the first occurrence of the stop codon “TGA” after the first occurrence of “ATG” that is a multiple of three away from the “ATG”. 
+       int stopTGA = findStopCodon(dna, startCodon, "TGA");
        //Return the gene formed from the “ATG” and the closest stop codon that is a multiple of three away.
+       int temp = Math.min(stopTAA, stopTAG);
+       int minCodon = Math.min(temp, stopTGA);
        //If there is no valid stop codon and therefore no gene, return the empty string.
+       if (minCodon == dna.length) {
        return "";
+       }
+       return dna.substring(startCodon, minCodon);
     }
    public void testFindGene() {
     }
