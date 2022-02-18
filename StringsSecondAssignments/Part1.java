@@ -66,6 +66,15 @@ public class Part1 {
        return dna.substring(startCodon, minCodon);
     }
    public void testFindGene() {
+       //test case 1: no ATG
+       //         012345678901 
+       String testdna = "xxxyyyTAAxxx";
+       System.out.println(testdna);
+       System.out.println(findGene(testdna));
+       //test case 2: one ATG, one valid TAA
+       //test case 3: one ATG, multiple valid stop codons
+       //test case 4: one ATG, no valid stop codons
+       //test case 5: one ATG, no stop codons
     }
    public void printAllGenes(String dna) {
     }
