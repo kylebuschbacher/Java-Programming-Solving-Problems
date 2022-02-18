@@ -29,9 +29,16 @@ public class Part1 {
         String testDna = "xxxyyyTAAyyyxxx";
         int num = findStopCodon(testDna, 0, "TAA");
         if (num != 6) System.out.println("error on 9");
-        //case 2: multiple TAA, but only one divisible by 3        
+        //case 2: multiple TAA, but only one divisible by 3  
+        //                 xxxyyyxxxyyyxxxyyyxxx
+        //         0123456789012345678901234567890  
+        testDna = "xxxyyyxxATGxTAAxTAATAATAAxTAAyyyxxx";
+        num = findStopCodon(testDna, 0, "TAA");
+        if (num != 28) System.out.println("error on 28");
         //case 3: look for TGA, but only TAA in dna
-        
+        test Dna = "xxxyyyATGxxxTGAxxxyyy"
+        num = findStopCodon(testDna, 0, "TAA");
+        if (num != -1) System.out.println("error on -1");
 
    }
    public String findGene(String dna) {
