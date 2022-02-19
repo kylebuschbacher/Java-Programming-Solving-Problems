@@ -12,16 +12,19 @@ public class Part1 {
         int currIndex = startIndex + 3; //don't think the +3 really matters
         //find first occurence of stopCodon that appears past startIndex
         //and is a multiple of 3 away from start index
-        while (currIndex != 1) {
-            currIndex = dna.indexOf(stopCodon, currIndex);
+        while (currIndex != dna.length()) {
+            currIndex = dna.indexOf(stopCodon, currIndex + 1);
             if ((currIndex - startIndex) % 3 == 0) {
                 return currIndex;
             }
-        }
+            if (currIndex == -1) {
+                break;
+            }
+                    }
         
         //if no such stopCodon, return the length of the dna strand
         return dna.length();
-    }//
+    }
     public void testFindStopCodon(){
         //test cases
         //case 1:
@@ -33,10 +36,11 @@ public class Part1 {
         //                 xxxyyyxxxyyyxxxyyyxxx
         //         0123456789012345678901234567890  
         testDna = "xxxyyyxxATGxTAAxTAATAATAAxTAAyyyxxx";
-        num = findStopCodon(testDna, 0, "TAA");
-        if (num != 28) System.out.println("error on 28");
+        num = findStopCodon(testDna, 8, "TAA");
+        if (num != 26) System.out.println("error on 26");
+        System.out.println(num);
         //case 3: look for TGA, but only TAA in dna
-        testDna = "xxxyyyATGxxxTGAxxxyyy"
+        testDna = "xxxyyyATGxxxTGAxxxyyy";
         num = findStopCodon(testDna, 0, "TAA");
         if (num != testDna.length() ) System.out.println("error on dnalength");
 
@@ -60,21 +64,35 @@ public class Part1 {
        int temp = Math.min(stopTAA, stopTAG);
        int minCodon = Math.min(temp, stopTGA);
        //If there is no valid stop codon and therefore no gene, return the empty string.
-       if (minCodon == dna.length) {
+       if (minCodon == dna.length()) {
        return "";
        }
-       return dna.substring(startCodon, minCodon);
+       return dna.substring(startCodon, minCodon+3);
     }
    public void testFindGene() {
        //test case 1: no ATG
-       //         012345678901 
+       //                012345678901 
        String testdna = "xxxyyyTAAxxx";
        System.out.println(testdna);
        System.out.println(findGene(testdna));
        //test case 2: one ATG, one valid TAA
+       //         012345678901 
+       testdna = "xxxATGcccTAAxxx";
+       System.out.println(testdna);
+       System.out.println(findGene(testdna));
        //test case 3: one ATG, multiple valid stop codons
+       //         012345678901234567890123456 
+       testdna = "xxxATGcccTGAAAATAAxxxTAGxxx";
+       System.out.println(testdna);
+       System.out.println(findGene(testdna));
        //test case 4: one ATG, no valid stop codons
+       testdna = "xxxATGccccTGAAAATAAxxxTAGxxx";
+       System.out.println(testdna);
+       System.out.println(findGene(testdna));
        //test case 5: one ATG, no stop codons
+       testdna = "xxxATGcccxxx";
+       System.out.println(testdna);
+       System.out.println(findGene(testdna));
     }
    public void printAllGenes(String dna) {
     }
