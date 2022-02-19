@@ -21,7 +21,7 @@ public class Part1 {
         
         //if no such stopCodon, return the length of the dna strand
         return dna.length();
-    }
+    }//
     public void testFindStopCodon(){
         //test cases
         //case 1:
