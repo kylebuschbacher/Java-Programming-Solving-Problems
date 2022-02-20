@@ -4,7 +4,7 @@
  * be any of the three stop codons “TAA”, “TAG”, or “TGA”.
  * 
  * @author Kyle
- * @version 2/13/2022
+ * @version 2/20/2022
  */
 public class Part1 {
     public int findStopCodon(String dna, int startIndex, String stopCodon) {
@@ -23,7 +23,7 @@ public class Part1 {
                     }
         
         //if no such stopCodon, return the length of the dna strand
-        return dna.length();
+        return -1;
     }
     public void testFindStopCodon(){
         //test cases
@@ -61,13 +61,29 @@ public class Part1 {
        //Find the index of the first occurrence of the stop codon “TGA” after the first occurrence of “ATG” that is a multiple of three away from the “ATG”. 
        int stopTGA = findStopCodon(dna, startCodon, "TGA");
        //Return the gene formed from the “ATG” and the closest stop codon that is a multiple of three away.
-       int temp = Math.min(stopTAA, stopTAG);
-       int minCodon = Math.min(temp, stopTGA);
+       //int temp = Math.min(stopTAA, stopTAG);
+       //int minCodon = Math.min(temp, stopTGA);
        //If there is no valid stop codon and therefore no gene, return the empty string.
-       if (minCodon == dna.length()) {
-       return "";
+       //if (minCodon == dna.length()) {
+       //return "";
+       //}
+       //return dna.substring(startCodon, minCodon+3);
+       //
+       int minIndex;
+       if (stopTAA == -1 ||
+           stopTGA < stopTAA && stopTGA != -1) {
+               minIndex = stopTGA;
+            }
+       else {
+           minIndex = stopTAA;
        }
-       return dna.substring(startCodon, minCodon+3);
+       if (minIndex == -1 || stopTAG < minIndex && stopTAG != -1) {
+           minIndex = stopTAG;
+        }
+       if (minIndex == -1) return "";
+       return dna.substring(startCodon, minIndex + 3);
+       
+       
     }
    public void testFindGene() {
        //test case 1: no ATG
