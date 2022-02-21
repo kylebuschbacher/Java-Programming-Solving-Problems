@@ -1,10 +1,11 @@
 
+
 /**
  * Find a gene in a strand of DNA where the stop codon could 
  * be any of the three stop codons “TAA”, “TAG”, or “TGA”.
  * 
  * @author Kyle
- * @version 2/20/2022
+ * @version 2/2 /2022
  */
 public class Part1 {
     public int findStopCodon(String dna, int startIndex, String stopCodon) {
@@ -45,11 +46,11 @@ public class Part1 {
         if (num != testDna.length() ) System.out.println("error on dnalength");
 
    }
-   public String findGene(String dna) {
+   public String findGene(String dna, int startIndex) {
        //want to find DNA strings regardless of case:
        dna = dna.toUpperCase(); //strings are immutable, so I think this is right
        //find the index position of the start codon "ATG"
-       int startCodon = dna.indexOf("ATG");
+       int startCodon = dna.indexOf("ATG", startIndex);
        //if no "ATG", return empty string
        if (startCodon == -1) {
             return "";
@@ -90,27 +91,50 @@ public class Part1 {
        //                012345678901 
        String testdna = "xxxyyyTAAxxx";
        System.out.println(testdna);
-       System.out.println(findGene(testdna));
+       System.out.println(findGene(testdna, 0));
        //test case 2: one ATG, one valid TAA
        //         012345678901 
        testdna = "xxxATGcccTAAxxx";
        System.out.println(testdna);
-       System.out.println(findGene(testdna));
+       System.out.println(findGene(testdna, 0));
        //test case 3: one ATG, multiple valid stop codons
        //         012345678901234567890123456 
        testdna = "xxxATGcccTGAAAATAAxxxTAGxxx";
        System.out.println(testdna);
-       System.out.println(findGene(testdna));
+       System.out.println(findGene(testdna, 0));
        //test case 4: one ATG, no valid stop codons
        testdna = "xxxATGccccTGAAAATAAxxxTAGxxx";
        System.out.println(testdna);
-       System.out.println(findGene(testdna));
+       System.out.println(findGene(testdna, 0));
        //test case 5: one ATG, no stop codons
        testdna = "xxxATGcccxxx";
        System.out.println(testdna);
-       System.out.println(findGene(testdna));
+       System.out.println(findGene(testdna, 0));
     }
    public void printAllGenes(String dna) {
+       int startIndex = 0;
+       while (true) {
+           String myGene = findGene(dna, startIndex);
+           System.out.println(myGene);
+           startIndex = dna.indexOf("ATG", startIndex) + myGene.length();
+           if (myGene.isEmpty()) break;
+        }
+       
+    }
+    public void testPrintAllGenes(){
+    //case 1 multiple valid ATGs and stop codons
+    String testdna = "xxxATGyyyxxxTAAxxxATGyyyTAGaaa";
+    printAllGenes(testdna);
+    //case 2 multiple ATGs, but no valid stop codons
+    testdna = "xxxATGyyyxxxATGxTAAxxATG";
+    printAllGenes(testdna);
+    //case 3 multiple ATGs and stop codons, but only one valid stop codons
+    testdna = "ATGyyyxATGTAATAAxxTGAxxx";
+    printAllGenes(testdna);
+    //case 4 no ATGs
+    testdna = "TAATAATGATAGTAG";
+    printAllGenes(testdna);
+    System.out.println("Test Complete");
     }
 
 }
