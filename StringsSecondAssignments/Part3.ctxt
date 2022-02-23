@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Part3
+comment0.text=Count\ how\ many\ genes\ are\ in\ a\ strand\ of\ DNA\r\n\ \r\n\ @author\ Kyle\r\n\ @version\ 2/22/22\r\n
+comment1.params=dna\ startIndex\ stopCodon
+comment1.target=int\ findStopCodon(java.lang.String,\ int,\ java.lang.String)
+comment2.params=dna\ startIndex
+comment2.target=java.lang.String\ findGene(java.lang.String,\ int)
+comment3.params=dna
+comment3.target=void\ printAllGenes(java.lang.String)
+comment4.params=dna
+comment4.target=int\ countGenes(java.lang.String)
+comment5.params=
+comment5.target=void\ testPrintAllGenes()
+comment6.params=
+comment6.target=void\ testCountGenes()
+numComments=7

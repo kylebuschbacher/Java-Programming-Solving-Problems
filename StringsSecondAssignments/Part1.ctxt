@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Part1
+comment0.text=\r\n\ Find\ a\ gene\ in\ a\ strand\ of\ DNA\ where\ the\ stop\ codon\ could\ \r\n\ be\ any\ of\ the\ three\ stop\ codons\ \u201CTAA\u201D,\ \u201CTAG\u201D,\ or\ \u201CTGA\u201D.\r\n\ \r\n\ @author\ Kyle\r\n\ @version\ 2/20/2022\r\n
+comment1.params=dna\ startIndex\ stopCodon
+comment1.target=int\ findStopCodon(java.lang.String,\ int,\ java.lang.String)
+comment2.params=
+comment2.target=void\ testFindStopCodon()
+comment3.params=dna\ startIndex
+comment3.target=java.lang.String\ findGene(java.lang.String,\ int)
+comment4.params=
+comment4.target=void\ testFindGene()
+comment5.params=dna
+comment5.target=void\ printAllGenes(java.lang.String)
+comment6.params=
+comment6.target=void\ testPrintAllGenes()
+numComments=7

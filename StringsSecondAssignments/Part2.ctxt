@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Part2
+comment0.text=\r\n\ Determine\ how\ many\ occurences\ of\ a\ string\ appear\ in\ another\ string\r\n\ \r\n\ @author\ Kyle\r\n\ @version\ 2/22/22\r\n
+comment1.params=stringa\ stringb
+comment1.target=int\ howMany(java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=void\ testHowMany()
+numComments=3
