@@ -1,8 +1,15 @@
 #BlueJ class context
 comment0.target=Part2
-comment0.text=\r\n\ Write\ a\ description\ of\ Part2\ here.\r\n\ Finds\ the\ ratio\ of\ C's\ and\ G's\ to\ the\ length\ of\ an\ input\ string\r\n\ \r\n\ @author\ Kyle\ \r\n\ @version\ 2/26/22\r\n
 comment1.params=dna
 comment1.target=double\ cgRatio(java.lang.String)
 comment2.params=
 comment2.target=void\ testcgRatio()
-numComments=3
+comment3.params=dna
+comment3.target=int\ countCTG(java.lang.String)
+comment4.params=
+comment4.target=void\ testcountCTG()
+comment5.params=sr
+comment5.target=void\ processGenes(edu.duke.StorageResource)
+comment6.params=
+comment6.target=void\ testProcessGenes()
+numComments=7
