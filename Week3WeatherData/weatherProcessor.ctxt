@@ -1,4 +1,15 @@
 #BlueJ class context
 comment0.target=weatherProcessor
-comment0.text=\r\n\ Write\ a\ description\ of\ weatherProcessor\ here.\r\n\ Find\ coldest\ hour\ in\ a\ csv\ file\r\n\ \r\n\ @author\ Kyle\r\n\ @version\ 3/7/22\r\n
-numComments=1
+comment1.params=parser
+comment1.target=org.apache.commons.csv.CSVRecord\ coldestHourInFile(org.apache.commons.csv.CSVParser)
+comment2.params=
+comment2.target=java.lang.String\ fileWithColdestTemperature()
+comment3.params=parser
+comment3.target=org.apache.commons.csv.CSVRecord\ lowestHumidityInFile(org.apache.commons.csv.CSVParser)
+comment4.params=
+comment4.target=void\ testColdestInDay()
+comment5.params=
+comment5.target=void\ testFileWithColdestTemperture()
+comment6.params=
+comment6.target=void\ testLowestHumidityInFile()
+numComments=7
