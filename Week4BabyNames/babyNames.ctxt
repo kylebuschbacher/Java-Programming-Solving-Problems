@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=babyNames
+comment0.text=\r\n\ Processes\ baby\ name\ data.\r\n\ \r\n\ @author\ Kyle\r\n\ @version\ 3/13/22\r\n
+comment1.params=fr
+comment1.target=void\ totalBirths(edu.duke.FileResource)
+comment2.params=year\ name\ gender
+comment2.target=int\ getRank(int,\ java.lang.String,\ java.lang.String)
+comment3.params=year\ rank\ gender
+comment3.target=java.lang.String\ getName(int,\ int,\ java.lang.String)
+comment4.params=
+comment4.target=void\ testTotalBirths()
+numComments=5

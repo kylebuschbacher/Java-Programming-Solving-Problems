@@ -1,0 +1,9 @@
+whatisNameInYear( String name, int year, int newYear, String gender)
+using test file,
+let's say Sophia was born in 2012
+and want to know what her name would be if born in 2014 (assuming same rank for both years)
+1. open file of year
+2. get rank of name (Sophia) in year (2012); it is 1
+3. open file of newyear (2014)
+4. use get name to find name of rank (1); it is "Emma"
+5. I return "Emma"
