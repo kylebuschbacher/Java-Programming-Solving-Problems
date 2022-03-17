@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=babyNames
-comment0.text=\r\n\ Processes\ baby\ name\ data.\r\n\ \r\n\ @author\ Kyle\r\n\ @version\ 3/13/22\r\n
+comment0.text=\r\n\ Processes\ baby\ name\ data.\r\n\ \r\n\ @author\ Kyle\r\n\ @version\ 3/16/22\r\n\ just\ need\ to\ write\ algorithm\ and\ implemment\ code\ for\ getTotalBirthsRankedHigher.\r\n\ All\ other\ methods\ tested\ satisfactorily\r\n
 comment1.params=fr
 comment1.target=void\ totalBirths(edu.duke.FileResource)
 comment2.params=year\ name\ gender
@@ -11,6 +11,10 @@ comment4.params=name\ year\ newYear\ gender
 comment4.target=java.lang.String\ whatIsNameInYear(java.lang.String,\ int,\ int,\ java.lang.String)
 comment5.params=name\ gender
 comment5.target=int\ yearOfHighestRank(java.lang.String,\ java.lang.String)
-comment6.params=
-comment6.target=void\ testTotalBirths()
-numComments=7
+comment6.params=name\ gender
+comment6.target=double\ getAverageRank(java.lang.String,\ java.lang.String)
+comment7.params=fr\ name\ gender
+comment7.target=int\ getRankForCurrentYear(edu.duke.FileResource,\ java.lang.String,\ java.lang.String)
+comment8.params=
+comment8.target=void\ testTotalBirths()
+numComments=9
