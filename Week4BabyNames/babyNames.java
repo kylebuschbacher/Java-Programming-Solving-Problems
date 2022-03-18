@@ -5,9 +5,8 @@ import java.io.*;
  * Processes baby name data.
  * 
  * @author Kyle
- * @version 3/16/22
- * just need to write algorithm and implemment code for getTotalBirthsRankedHigher.
- * All other methods tested satisfactorily
+ * @version 3/17/22
+ * all methods complete. Doing quiz1 in void method quiz 1
  */
 public class babyNames {
     public void totalBirths (FileResource fr) {
@@ -111,9 +110,79 @@ public class babyNames {
         return -1;    
             
     }
+    public int getTotalBirthsRankedHigher(int year, String name, String gender) {
+        int totalBirthsHigher = 0;
+        FileResource fr = new FileResource("us_babynames_by_year/yob" + year + ".csv");
+        for (CSVRecord rec : fr.getCSVParser(false)) {
+             if (!rec.get(1).equals(gender)) continue;
+             String currName = rec.get(0);
+             if (!currName.equals(name)) totalBirthsHigher += Integer.parseInt(rec.get(2));
+             else return totalBirthsHigher;
+            }
+        return totalBirthsHigher;
+    }
     public void testTotalBirths() {
         FileResource fr = new FileResource("us_babynames_test/yob2012short.csv");
+        
         totalBirths(fr);
     }
-    
+    public void quiz1(){
+        //1. 
+        int year = 1900;
+        FileResource fr = new FileResource("us_babynames_by_year/yob" + year + ".csv");
+        System.out.println("Question 1");
+        totalBirths (fr);
+        //2. 
+        year = 1905;
+        fr = new FileResource("us_babynames_by_year/yob" + year + ".csv");
+        System.out.println("Question 2");
+        totalBirths (fr);
+        //3.
+        year = 1960;
+        String name = "Emily";
+        String gender = "F"     ;  
+        int rank = getRank(year, name, gender);
+        System.out.println("Question 3:");
+        System.out.println("Rank for " + name + ": " +rank);
+        //4.
+        year = 1971;
+        name = "Frank";
+        gender = "M";       
+        rank = getRank(year, name, gender);
+        System.out.println("Question 4:");
+        System.out.println("Rank for " + name + ": " +rank);
+        //5. 
+        rank = 350;
+        gender = "F";
+        year = 1980;
+        name = getName(year, rank, gender);
+        System.out.println("Question 5:");
+        System.out.println("Rank for " + name + ": " +rank);
+        //6. Question 6 What is the boy’s name of rank 450 in 1982?
+        rank = 450;
+        gender = "M";
+        year = 1982;
+        name = getName(year, rank, gender);
+        System.out.println("Question 6:");
+        System.out.println("Rank for " + name + ": " +rank);
+        //7. Suppose Susan was born in 1972. Based on her name's rank in 1972, 
+        //what would her name be if she were born in 2014
+        year = 1972;
+        gender = "F";
+        int newYear = 2014;
+        name = "Susan";
+        String newName = whatIsNameInYear(name, year, newYear, gender);
+        System.out.println("Question 7:");
+        System.out.println(name + " in " + year + " would be " + newName + " in " + newYear);
+        //8. Suppose Owen was born in 1974. Based on his name's rank in 1974, 
+        //what would his name be if he were born in 2014
+        year = 1974;
+        gender = "M";
+        newYear = 2014;
+        name = "Owen";
+        newName = whatIsNameInYear(name, year, newYear, gender);
+        System.out.println("Question 8:");
+        System.out.println(name + " in " + year + " would be " + newName + " in " + newYear);
+        
+    }
 }
